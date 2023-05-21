@@ -41,7 +41,7 @@ public class UserServiceImpl implements UserService {
     }
 
     @Override
-    @CachePut(value = "users", key = "#user.id")
+    @CachePut(value = "users", key = "#userId")
     public User updateUser(String userId, String name, long followers) {
         LOG.info("UserService::updateUser, userId = {}", userId);
         User user = getUserById(userId);
